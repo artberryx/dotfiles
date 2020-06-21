@@ -10,13 +10,6 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup end
 
-" Search highlight
-" augroup vimrc-incsearch-highlight
-"   autocmd!
-"   autocmd CmdlineEnter /,\? :set hlsearch
-"   autocmd CmdlineLeave /,\? :set nohlsearch
-" augroup end
-
 " Indentation
 set autoindent
 
