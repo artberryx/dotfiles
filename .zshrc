@@ -12,7 +12,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # bashrc
-source $HOME/.bashrc
+source $HOME/.commonrc
 
 # vi mode
 bindkey -v
