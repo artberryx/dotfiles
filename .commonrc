@@ -1,4 +1,4 @@
-# aliases
+# basic aliases
 alias ll="ls -al"
 
 # nvim
@@ -16,4 +16,7 @@ fi
 
 # vi mode
 set -o vi
+
+# dotfiles
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 

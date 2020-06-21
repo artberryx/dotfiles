@@ -26,6 +26,3 @@ bindkey -M vicmd "^v" edit-command-line
 # scm_breeze
 [ -s "/Users/artberryx/.scm_breeze/scm_breeze.sh" ] && source "/Users/artberryx/.scm_breeze/scm_breeze.sh"
 
-# dotfiles
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
-
