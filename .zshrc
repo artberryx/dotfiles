@@ -24,5 +24,4 @@ bindkey -M vicmd "^v" edit-command-line
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # scm_breeze
-[ -s "/Users/artberryx/.scm_breeze/scm_breeze.sh" ] && source "/Users/artberryx/.scm_breeze/scm_breeze.sh"
-
+[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
