@@ -4,8 +4,8 @@ ZSH_THEME="agnoster"
 plugins=(
   git
   fzf
-  zsh-syntax-highlighting
   zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 # oh-my-zsh
