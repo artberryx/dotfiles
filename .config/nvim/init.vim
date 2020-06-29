@@ -44,14 +44,9 @@ Plug 'vim-scripts/ReplaceWithRegister'
 
 call plug#end()
 
-" EasyMotion
-noremap <Leader>l <Plug>(easymotion-lineforward)
-noremap <Leader>j <Plug>(easymotion-j)
-noremap <Leader>k <Plug>(easymotion-k)
-noremap <Leader>h <Plug>(easymotion-linebackward)
-noremap <Leader>a <Plug>(easymotion-jumptoanywhere)
-
 " Keymaps
+map <Space> <Leader>
+let mapleader = "\<Space>"
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 nnoremap <C-j> <C-w>j
@@ -59,4 +54,11 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 noremap <Leader>n :NERDTreeToggle<CR>
+
+" EasyMotion
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+map <Leader>a <Plug>(easymotion-jumptoanywhere)
 
