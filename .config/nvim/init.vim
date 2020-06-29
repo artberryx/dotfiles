@@ -24,6 +24,7 @@ set splitbelow
 set splitright
 
 " Etc
+set cursorline
 set mouse=a
 set clipboard=unnamedplus
 
@@ -39,10 +40,22 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/ReplaceWithRegister'
 
+" Plugins related to themes
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'sonph/onehalf', { 'rtp': 'vim/' }
+
 call plug#end()
+
+" Theme
+colorscheme onehalfdark
+let g:airline_theme='onehalfdark'
+set termguicolors
+
+" NERDTree
+let NERDTreeShowHidden=1
 
 " Keymaps
 map <Space> <Leader>
