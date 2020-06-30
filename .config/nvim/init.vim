@@ -59,7 +59,7 @@ let NERDTreeShowHidden=1
 
 " Keymaps
 map <Space> <Leader>
-let mapleader = "\<Space>"
+map <Leader> <Plug>(easymotion-prefix)
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 nnoremap <C-j> <C-w>j
