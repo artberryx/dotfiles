@@ -6,18 +6,18 @@
 
 ```
 git init --bare $HOME/.dotfiles.git
-echo 'alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"' >> $HOME/.zshrc
+echo 'alias dot="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"' >> $HOME/.zshrc
 source ~/.zshrc
-dotfiles config --local status.showUntrackedFiles no
+dot config --local status.showUntrackedFiles no
 ```
 
 ## 클론
 
 ```
 git clone --bare git@github.com:artberryx/dotfiles.git $HOME/.dotfiles.git
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
-dotfiles checkout
-dotfiles config --local status.showUntrackedFiles no
+alias dot="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
+dot checkout
+dot config --local status.showUntrackedFiles no
 ```
 
 ## References
