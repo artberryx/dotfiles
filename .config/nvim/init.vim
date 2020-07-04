@@ -8,6 +8,7 @@ augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set number relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+  autocmd FileType nerdtree set number relativenumber
 augroup end
 
 " Indentation
@@ -77,8 +78,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-nnoremap <Esc><Esc> :noh<return>
+nnoremap <Esc><Esc> :noh<CR>
+nnoremap <Leader>rc :vs $MYVIMRC<CR>
+nnoremap <Leader>rso :so $MYVIMRC<CR>
 noremap <Leader>n :NERDTreeToggle<CR>
+noremap <Leader>m :NERDTreeFind<CR>
 
 " EasyMotion
 map <Leader>l <Plug>(easymotion-lineforward)
