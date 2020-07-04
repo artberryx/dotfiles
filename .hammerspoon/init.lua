@@ -9,4 +9,3 @@ function hello()
 end
 
 hs.hotkey.bind({'control'}, 33, hello)
-
