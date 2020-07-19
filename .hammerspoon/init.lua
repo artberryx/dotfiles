@@ -1,6 +1,6 @@
 local inputEnglish = "com.apple.keylayout.ABC"
 
-function hello()
+function escEnglish()
 	local inputSource = hs.keycodes.currentSourceID()
 	if not (inputSource == inputEnglish) then
 		hs.keycodes.currentSourceID(inputEnglish)
@@ -8,4 +8,4 @@ function hello()
 	hs.eventtap.keyStroke({}, 'escape')
 end
 
-hs.hotkey.bind({'control'}, 33, hello)
+hs.hotkey.bind({'control'}, 33, escEnglish)
