@@ -126,7 +126,7 @@
                         "key_code": "caps_lock"
                     },
                     "to": {
-                        "key_code": "left_control"
+                        "key_code": "f20"
                     }
                 },
                 {
@@ -134,7 +134,7 @@
                         "key_code": "right_command"
                     },
                     "to": {
-                        "key_code": "f13"
+                        "key_code": "f19"
                     }
                 }
             ],
