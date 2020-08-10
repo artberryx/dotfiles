@@ -21,3 +21,4 @@ end
 
 hs.hotkey.bind({'control'}, 33, escEnglish)
 hs.hotkey.bind({}, 'f13', toggle)
+hs.hotkey.bind({'shift'}, 'f13', toggle)
