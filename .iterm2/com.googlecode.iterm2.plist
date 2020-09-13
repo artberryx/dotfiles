@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AddNewTabAtEndOfTabs</key>
+	<false/>
 	<key>AllowClipboardAccess</key>
 	<true/>
 	<key>AppleAntiAliasingThreshold</key>
@@ -332,10 +334,14 @@
 	</dict>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>527 486 799 448 0 0 1792 1097 </string>
+	<key>NSWindow Frame SUStatusFrame</key>
+	<string>696 743 400 129 0 0 1792 1120 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>586 546 620 392 0 0 1792 1120 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>61 659 665 438 0 0 1792 1097 </string>
+	<string>52 0 1740 1097 0 0 1792 1097 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>228 99 665 446 0 0 1792 1097 </string>
+	<string>228 99 665 438 0 0 1792 1097 </string>
 	<key>NeverWarnAboutShortLivedSessions_4DAA78BB-61DC-4DCE-993A-EE9E7FAED066</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_4DAA78BB-61DC-4DCE-993A-EE9E7FAED066_selection</key>
@@ -1266,6 +1272,7 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
+		<string>3.3.12</string>
 		<string>3.3.11</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
@@ -1284,11 +1291,11 @@
 	<key>NoSyncInstallationId</key>
 	<string>BD5F9675-B2E5-4A35-8129-21A941520003</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>9</integer>
+	<integer>21</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>614177529.29438198</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2055,10 +2062,16 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-06-21T00:55:28Z</date>
+	<date>2020-09-13T06:24:39Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>3497599793</integer>
+	<key>SUUpdateRelaunchingMarker</key>
+	<false/>
 	<key>SeparateStatusBarsPerPane</key>
+	<false/>
+	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>SoundForEsc</key>
 	<false/>
@@ -2073,6 +2086,6 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.11</string>
+	<string>3.3.12</string>
 </dict>
 </plist>
