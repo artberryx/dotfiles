@@ -1,3 +1,6 @@
+# commonrc
+source $HOME/.commonrc
+
 # nvim
 if [[ -x "$(command -v nvim)" ]]
 then
@@ -23,9 +26,6 @@ plugins=(
 
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
-
-# commonrc
-source $HOME/.commonrc
 
 # vi mode
 bindkey -v

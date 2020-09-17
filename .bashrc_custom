@@ -1,3 +1,6 @@
+# commonrc
+source $HOME/.commonrc
+
 # nvim
 if [[ -x "$(command -v nvim)" ]]
 then
@@ -10,7 +13,4 @@ else
     export EDITOR=vi
     export VISUAL=vi
 fi
-
-# commonrc
-source $HOME/.commonrc
 
