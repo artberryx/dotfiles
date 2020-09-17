@@ -1,3 +1,16 @@
+# nvim
+if [[ -x "$(command -v nvim)" ]]
+then
+    alias vim="nvim"
+    alias vi="nvim"
+    alias vimdiff="nvim -d"
+    export EDITOR=/usr/local/bin/nvim
+    export VISUAL=/usr/local/bin/nvim
+else
+    export EDITOR=vi
+    export VISUAL=vi
+fi
+
 # zsh
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="agnoster"

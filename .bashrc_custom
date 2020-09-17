@@ -1,6 +1,16 @@
+# nvim
+if [[ -x "$(command -v nvim)" ]]
+then
+    alias vim="nvim"
+    alias vi="nvim"
+    alias vimdiff="nvim -d"
+    export EDITOR=/usr/bin/nvim
+    export VISUAL=/usr/bin/nvim
+else
+    export EDITOR=vi
+    export VISUAL=vi
+fi
+
 # commonrc
 source $HOME/.commonrc
-
-# vi mode
-set -o vi
 
