@@ -1,3 +1,16 @@
+# zsh
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="agnoster"
+plugins=(
+  git
+  fzf
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
+
+# oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
 # commonrc
 source $HOME/.commonrc
 
@@ -13,19 +26,6 @@ else
     export EDITOR=vi
     export VISUAL=vi
 fi
-
-# zsh
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="agnoster"
-plugins=(
-  git
-  fzf
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-)
-
-# oh-my-zsh
-source $ZSH/oh-my-zsh.sh
 
 # vi mode
 bindkey -v
