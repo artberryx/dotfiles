@@ -15,3 +15,16 @@ fi
 # scm_breeze
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
+# nvim
+if [[ -x "$(command -v nvim)" ]]
+then
+    alias vim="nvim"
+    alias vi="nvim"
+    alias vimdiff="nvim -d"
+    export EDITOR=nvim
+    export VISUAL=nvim
+else
+    export EDITOR=vi
+    export VISUAL=vi
+fi
+
