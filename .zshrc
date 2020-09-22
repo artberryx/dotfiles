@@ -23,3 +23,9 @@ bindkey -M vicmd "^v" edit-command-line
 # zsh + fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# zshrc.local
+if [[ -f ~/.zshrc.local ]]
+then
+  source ~/.zshrc.local
+fi
+

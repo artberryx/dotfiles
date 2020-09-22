@@ -1,21 +1,20 @@
-local inputEnglish = "com.apple.keylayout.ABC"
-local inputKorean = "com.apple.inputmethod.Korean.2SetKorean"
-local inputJapanese = "com.apple.inputmethod.Kotoeri.Japanese"
+local koreanLayout = "2-Set Korean"
+local englishLayout = "ABC"
 
 function escEnglish()
-	local inputSource = hs.keycodes.currentSourceID()
-	if not (inputSource == inputEnglish) then
-		hs.keycodes.currentSourceID(inputEnglish)
+	local currentLayout = hs.keycodes.currentLayout()
+	if not (currentLayout == englishLayout) then
+		hs.keycodes.setLayout(englishLayout)
 	end
 	hs.eventtap.keyStroke({}, 'escape')
 end
 
 function toggle()
-	local inputSource = hs.keycodes.currentSourceID()
-	if inputSource == inputEnglish then
-		hs.keycodes.currentSourceID(inputKorean)
+	local currentLayout = hs.keycodes.currentLayout()
+	if currentLayout == englishLayout then
+		hs.keycodes.setMethod(koreanLayout)
 	else
-		hs.keycodes.currentSourceID(inputEnglish)
+		hs.keycodes.setLayout(englishLayout)
 	end
 end
 

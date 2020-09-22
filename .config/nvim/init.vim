@@ -59,7 +59,7 @@ Plug 'vim-scripts/ReplaceWithRegister'
 " Plugins related to themes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'sonph/onehalf', { 'rtp': 'vim/' }
+Plug 'artberryx/onehalf', { 'rtp': 'vim/' }
 
 call plug#end()
 
