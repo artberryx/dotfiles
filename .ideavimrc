@@ -3,6 +3,8 @@ set hlsearch
 set incsearch
 set showcmd
 set clipboard+=ideaput
+set ignorecase
+set smartcase
 
 " Emulated plugins
 set easymotion
@@ -21,9 +23,9 @@ nnoremap <C-l> <C-w>l
 nnoremap <Esc><Esc> :noh<return>
 
 " EasyMotion
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
-map <Leader>a <Plug>(easymotion-jumptoanywhere)
+nnoremap <Leader>l <Plug>(easymotion-lineforward)
+nnoremap <Leader>j <Plug>(easymotion-j)
+nnoremap <Leader>k <Plug>(easymotion-k)
+nnoremap <Leader>h <Plug>(easymotion-linebackward)
+nnoremap <Leader>a <Plug>(easymotion-jumptoanywhere)
 
