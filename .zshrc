@@ -26,7 +26,6 @@ export FZF_DEFAULT_COMMAND='fd --hidden --no-ignore --type f'
 export FZF_CTRL_T_COMMAND='fd --hidden --no-ignore'
 export FZF_ALT_C_COMMAND='fd --hidden --no-ignore --type d'
 
-
 # zshrc.local
 if [[ -f ~/.zshrc.local ]]
 then

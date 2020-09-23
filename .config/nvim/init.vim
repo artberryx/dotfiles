@@ -70,16 +70,6 @@ set termguicolors
 " NERDTree
 let NERDTreeShowHidden=1
 
-" EasyMotion
-nnoremap <Leader>l <Plug>(easymotion-lineforward)
-nnoremap <Leader>j <Plug>(easymotion-j)
-nnoremap <Leader>k <Plug>(easymotion-k)
-nnoremap <Leader>h <Plug>(easymotion-linebackward)
-nnoremap <Leader>a <Plug>(easymotion-jumptoanywhere)
-
-" fzf
-nnoremap <silent> <C-p> :Files<CR>
-
 " Keymaps
 map <Space> <Leader>
 map <Leader> <Plug>(easymotion-prefix)
@@ -94,6 +84,16 @@ nnoremap <Leader>rc :vs $MYVIMRC<CR>
 nnoremap <Leader>rso :so $MYVIMRC<CR>
 noremap <Leader>n :NERDTreeToggle<CR>
 noremap <Leader>m :NERDTreeFind<CR>
+
+" EasyMotion
+nnoremap <Leader>l <Plug>(easymotion-lineforward)
+nnoremap <Leader>j <Plug>(easymotion-j)
+nnoremap <Leader>k <Plug>(easymotion-k)
+nnoremap <Leader>h <Plug>(easymotion-linebackward)
+nnoremap <Leader>a <Plug>(easymotion-jumptoanywhere)
+
+" fzf
+nnoremap <silent> <C-p> :Files<CR>
 
 " coc.nvim recommendation
 
