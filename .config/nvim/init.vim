@@ -86,11 +86,11 @@ noremap <Leader>n :NERDTreeToggle<CR>
 noremap <Leader>m :NERDTreeFind<CR>
 
 " EasyMotion
-nnoremap <Leader>l <Plug>(easymotion-lineforward)
-nnoremap <Leader>j <Plug>(easymotion-j)
-nnoremap <Leader>k <Plug>(easymotion-k)
-nnoremap <Leader>h <Plug>(easymotion-linebackward)
-nnoremap <Leader>a <Plug>(easymotion-jumptoanywhere)
+nmap <Leader>l <Plug>(easymotion-lineforward)
+nmap <Leader>j <Plug>(easymotion-j)
+nmap <Leader>k <Plug>(easymotion-k)
+nmap <Leader>h <Plug>(easymotion-linebackward)
+nmap <Leader>a <Plug>(easymotion-jumptoanywhere)
 
 " fzf
 nnoremap <silent> <C-p> :Files<CR>
