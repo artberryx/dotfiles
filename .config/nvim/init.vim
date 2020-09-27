@@ -11,10 +11,7 @@ augroup numbertoggle
   autocmd FileType nerdtree set number relativenumber
 augroup end
 
-" Indentation
-set autoindent
-
-" Tabs
+" Tab
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -24,11 +21,45 @@ set shiftround
 set splitbelow
 set splitright
 
-" Etc
+" Scroll
+set scrolloff=3
+if exists('##TermEnter')
+  " Disable scrolloff in terminal buffers (to avoid flickering)
+  " Note: scrolloff is a global option until neovim 0.5 (neovim/neovim#11915)
+  augroup termscrollfix
+    autocmd!
+    autocmd TermOpen,TermEnter * setlocal scrolloff=0
+    autocmd TermLeave          * setlocal scrolloff=3        " workaround for nvim<0.5
+  augroup end
+endif
+
+" Temporary files
+set noswapfile
+set nobackup
+set nowritebackup
+
+" Appearance
+set cmdheight=2
+set showtabline=2
 set cursorline
+set title
+set listchars=tab:»\ ,trail:·,extends:>,precedes:<
+
+" Etc
 set mouse=a
+set autoindent
 set ignorecase
 set smartcase
+set hidden
+set updatetime=300
+set shortmess+=c
+set foldopen+=jump
+
+if has("patch-8.1.1564")
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
 " Auto-install Plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -43,13 +74,13 @@ autocmd VimEnter *
 
 " Plugins
 call plug#begin(stdpath('data') . '/plugged')
-Plug 'easymotion/vim-easymotion'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-user'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -58,74 +89,76 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'voldikss/vim-floaterm'
+Plug 'szw/vim-maximizer'
 
 " Plugins related to themes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'artberryx/onehalf', { 'rtp': 'vim/' }
+Plug 'dracula/vim'
 call plug#end()
 
 " Theme
 colorscheme onehalfdark
 let g:airline_theme='onehalfdark'
+" colorscheme dracula
+" let g:airline_theme='dracula'
 set termguicolors
+let g:airline_highlighting_cache = 1
 
 " NERDTree
 let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
+let NERDTreeIgnore=[]
+" Close NERDTree when it is the only window left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" floaterm
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.7
+let g:floaterm_winblend = 20
 
 " Keymaps
 map <Space> <Leader>
-map <Leader> <Plug>(easymotion-prefix)
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
+nnoremap q: <nop>
+nnoremap Q <nop>
+nnoremap <silent> <M-t> :tabnew<CR>
+nnoremap <silent> <Esc><Esc> :noh<CR>
+nnoremap <silent> <Leader>rc :vs $MYVIMRC<CR>
+nnoremap <silent> <Leader>rso :so $MYVIMRC<CR>
+
+" Windows
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-nnoremap <Esc><Esc> :noh<CR>
-nnoremap <Leader>rc :vs $MYVIMRC<CR>
-nnoremap <Leader>rso :so $MYVIMRC<CR>
-noremap <Leader>n :NERDTreeToggle<CR>
-noremap <Leader>m :NERDTreeFind<CR>
-
-" EasyMotion
-nmap <Leader>l <Plug>(easymotion-lineforward)
-nmap <Leader>j <Plug>(easymotion-j)
-nmap <Leader>k <Plug>(easymotion-k)
-nmap <Leader>h <Plug>(easymotion-linebackward)
-nmap <Leader>a <Plug>(easymotion-jumptoanywhere)
+nnoremap _ <C-w>-
+nnoremap + <C-w>+
+nnoremap <S-Right> <C-w>>
+nnoremap <S-Left> <C-w><
+nnoremap <S-Down> <C-w>-
+nnoremap <S-Up> <C-w>+
+nnoremap <silent> <C-w>z :MaximizerToggle<CR>
+let g:maximizer_set_default_mapping = 0  " do not map <F3> (default mapping of vim-maximizer)
 
 " fzf
 nnoremap <silent> <C-p> :Files<CR>
 
+" NERDTree
+noremap <silent> <Leader>n :NERDTreeToggle<CR>
+noremap <silent> <Leader>m :NERDTreeFind<CR>
+noremap <silent> <Leader>b :NERDTreeFocus<CR>
+
+" floaterm
+tnoremap <silent> <C-[><C-[> <C-\><C-n>
+tnoremap <silent> <C-\><C-\> <C-\><C-n>
+nnoremap <silent> <M-p> :FloatermToggle<CR>
+tnoremap <silent> <M-p> <C-\><C-n>:FloatermToggle<CR>
+
 " coc.nvim recommendation
-
-" TextEdit might fail if hidden is not set.
-set hidden
-
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-
-" Give more space for displaying messages.
-set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
-
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -140,12 +173,8 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+" Use <M-space> to trigger completion.
+inoremap <silent><expr> <M-space> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
@@ -198,13 +227,13 @@ augroup end
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
-" xmap <leader>a  <Plug>(coc-codeaction-selected)
-" nmap <leader>a  <Plug>(coc-codeaction-selected)
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current buffer.
-" nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
-" nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -238,19 +267,19 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
-" nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
-" nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
 " Show commands.
-" nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document.
-" nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
-" nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-" nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
-" nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-" nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 

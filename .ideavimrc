@@ -7,7 +7,6 @@ set ignorecase
 set smartcase
 
 " Emulated plugins
-set easymotion
 set surround
 set commentary
 set ReplaceWithRegister
@@ -15,17 +14,9 @@ set textobj-entire
 
 " Keymaps
 map <Space> <Leader>
-map <Leader> <Plug>(easymotion-prefix)
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <Esc><Esc> :noh<return>
-
-" EasyMotion
-nnoremap <Leader>l <Plug>(easymotion-lineforward)
-nnoremap <Leader>j <Plug>(easymotion-j)
-nnoremap <Leader>k <Plug>(easymotion-k)
-nnoremap <Leader>h <Plug>(easymotion-linebackward)
-nnoremap <Leader>a <Plug>(easymotion-jumptoanywhere)
 

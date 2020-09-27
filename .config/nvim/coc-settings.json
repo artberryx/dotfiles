@@ -1,0 +1,20 @@
+{
+    // Enable preview (signatures, etc.) during completion
+    "suggest.enablePreview": true,
+    // Sort completion items alphabetically rather than by length
+    "suggest.defaultSortMethod": "alphabetical",
+    // Maxmium width of floating preview window
+    "suggest.maxPreviewWidth": 80,
+    // Show signature below of the cursor rather than above
+    "signature.preferShownAbove": false,
+    // Maxmium height of floating signature help window (defaults 8)
+    "signature.maxWindowHeight": 16,
+    // keymaps for coc-list
+    "list.insertMappings": {
+        "<C-c>": "do:exit" // CTRL-C: close window
+    },
+    // Use Microsoft Python Language Server (LSP) instead of jedi
+    "python.jediEnabled": false,
+    // Formtting provider (yapf, black, autopep8)
+    "python.formatting.provider": "autopep8"
+}
