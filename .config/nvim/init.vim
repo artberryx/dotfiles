@@ -42,6 +42,7 @@ set nowritebackup
 set cmdheight=2
 set showtabline=2
 set cursorline
+set cursorcolumn
 set title
 set listchars=tab:»\ ,trail:·,extends:>,precedes:<
 
@@ -91,6 +92,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'voldikss/vim-floaterm'
 Plug 'szw/vim-maximizer'
+Plug 'jiangmiao/auto-pairs'
 
 " Plugins related to themes
 Plug 'vim-airline/vim-airline'
@@ -118,6 +120,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:floaterm_width = 0.9
 let g:floaterm_height = 0.7
 let g:floaterm_winblend = 20
+
+" auto-pairs
+let g:AutoPairsShortcutToggle = ''
+let g:AutoPairsShortcutFastWrap = ''
+let g:AutoPairsShortcutJump = ''
+let g:AutoPairsShortcutBackInsert = ''
 
 " Keymaps
 map <Space> <Leader>
