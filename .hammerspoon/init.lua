@@ -1,5 +1,7 @@
 local koreanLayout = "2-Set Korean"
+local koreanSourceID = "com.apple.inputmethod.Korean.2SetKorean"
 local englishLayout = "ABC"
+local englishSourceID = "com.apple.keylayout.ABC"
 
 function escEnglish()
 	local currentLayout = hs.keycodes.currentLayout()
@@ -13,6 +15,7 @@ function toggle()
 	local currentLayout = hs.keycodes.currentLayout()
 	if currentLayout == englishLayout then
 		hs.keycodes.setMethod(koreanLayout)
+		hs.keycodes.currentSourceID(koreanSourceID)
 	else
 		hs.keycodes.setLayout(englishLayout)
 	end

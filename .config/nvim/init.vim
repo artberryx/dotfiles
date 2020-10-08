@@ -83,6 +83,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
+Plug 'wellle/targets.vim'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -93,6 +95,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'voldikss/vim-floaterm'
 Plug 'szw/vim-maximizer'
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-peekaboo'
 
 " Plugins related to themes
 Plug 'vim-airline/vim-airline'
