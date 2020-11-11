@@ -22,6 +22,6 @@ function toggle()
 end
 
 hs.hotkey.bind({}, 'f20', escEnglish)
-hs.hotkey.bind({'control'}, 33, escEnglish)
-hs.hotkey.bind({}, 'f19', toggle)
-hs.hotkey.bind({'shift'}, 'f19', toggle)
+-- hs.hotkey.bind({'control'}, 33, escEnglish)
+-- hs.hotkey.bind({}, 'f19', toggle)
+-- hs.hotkey.bind({'shift'}, 'f19', toggle)

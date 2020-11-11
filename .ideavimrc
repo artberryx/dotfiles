@@ -7,10 +7,16 @@ set ignorecase
 set smartcase
 
 " Emulated plugins
-set surround
-set commentary
 set ReplaceWithRegister
+set argtextobj
+set commentary
+set exchange
+set highlightedyank
+set multiple-cursors
+set surround
 set textobj-entire
+
+let g:argtextobj_pairs="(:),{:},[:]"
 
 " Keymaps
 map <Space> <Leader>

@@ -339,9 +339,11 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>586 546 620 392 0 0 1792 1120 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>51 1579 665 438 0 960 1920 1057 </string>
+	<string>-1332 681 745 488 -1920 396 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>228 99 665 438 0 0 1792 1097 </string>
+	<string>133 88 745 488 0 0 1536 960 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>211 60 745 488 0 0 1536 960 </string>
 	<key>NeverWarnAboutShortLivedSessions_4DAA78BB-61DC-4DCE-993A-EE9E7FAED066</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_4DAA78BB-61DC-4DCE-993A-EE9E7FAED066_selection</key>
@@ -1281,17 +1283,19 @@
 		<string>Input Mono</string>
 		<string>Monaco</string>
 	</array>
+	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
+	<true/>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 960}, {1920, 1080}}</string>
+		<string>{{-1920, 396}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{269, 1555}</string>
+		<string>{-1610, 1171}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>BD5F9675-B2E5-4A35-8129-21A941520003</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>22</integer>
+	<integer>39</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1661,6 +1665,14 @@
 				<true/>
 				<key>name</key>
 				<string>currentTab.currentSession.terminalIconName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.lastCommand</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -2062,7 +2074,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-09-21T04:43:31Z</date>
+	<date>2020-10-26T06:00:34Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
