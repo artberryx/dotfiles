@@ -1,5 +1,8 @@
 # basic aliases
 alias ll="ls -al"
+alias t="tmux attach || tmux"
+alias ta="tmux attach -t"
+alias tl="tmux list-sessions"
 
 # vi mode
 set -o vi
